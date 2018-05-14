@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>单文件提交表单</title>
+</head>
+<body>
+	<form action="uploadfiles" enctype="multipart/form-data" method="post" onsubmit="return sub()">
+		<input type="file" name="file" multiple /><br />
+		<button type="reset">重置</button>
+		<button type="submit">提交</button>
+	</form>
+	<script type="text/javascript" src="static/js/jquery-1.11.0.js" ></script>
+	<script type="text/javascript" src="static/js/jquery-form.js" ></script>
+	<script>
+		function sub(){
+			$("form").ajaxSubmit(function(message) {   
+	        //message为返回内容   
+	        console.log(message)
+	        });   
+			return false;
+		}
+		
+	</script>
+</body>
+</html>
